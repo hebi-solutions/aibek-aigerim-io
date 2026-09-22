@@ -243,7 +243,7 @@
     let lang='ky'; function setLanguage(next){lang=next;const t=copy[lang];document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=t[e.dataset.i18n]);renderCalendar(t);const input=document.getElementById('guest-name');input.placeholder=t.name;input.setAttribute('aria-label',t.name);document.getElementById('language-screen').classList.add('hidden');music.play().catch(()=>updateMusicButton());}
     document.querySelectorAll('.language-choice').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
     // Add the celebration host's WhatsApp number here, digits only with country code, e.g. 996555123456.
-    const whatsappOwner='996502228420';
+    const whatsappOwner='996777000550';
     document.getElementById('rsvp-form').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;const name=document.getElementById('guest-name').value.trim();const answer=f.elements.answer.value;const text=copy[lang].message(name,answer);const link=whatsappOwner?`https://wa.me/${whatsappOwner}?text=${encodeURIComponent(text)}`:'https://wa.me/?text='+encodeURIComponent(text);window.open(link,'_blank','noopener');});
 
     // --- Скрипт для создания падающих лепестков роз ---
